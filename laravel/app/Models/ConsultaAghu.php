@@ -6,7 +6,7 @@
 
     class ConsultaAghu extends Model
     {
-        protected $table = 'consulta_Aghu'; //Nome da tabela no banco
+        protected $table = 'consultas_aghu'; //Nome da tabela no banco
 
         protected $fillable = [
             'nr_consulta',
