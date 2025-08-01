@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\ConsultaAghu;
+use App\Models\ConsultaSisfam;
 
 class ConsultaSeeder extends Seeder
 {
@@ -25,6 +26,13 @@ class ConsultaSeeder extends Seeder
             'fone_recado' => '11999999999',
             'fone_contato' => '11999999999',
 
+        ]);
+
+        ConsultaSisfam::create([
+            'paciente' => 'Jessica',
+            'data_cirurgia' => '2025-07-25',
+            'profissional_solicitante' => 'Dr. Renato',
+            'total_registros' => '2',
         ]);
     }
 }

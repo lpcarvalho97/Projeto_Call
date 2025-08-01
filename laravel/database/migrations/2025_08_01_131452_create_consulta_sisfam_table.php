@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consulta_sisfam', function (Blueprint $table) {
+        Schema::create('consultas_sisfam', function (Blueprint $table) {
             $table->id();
             $table->string('id_apac')->nullable();
             $table->string('status_financeiro')->nullable();
@@ -54,6 +54,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('consulta_sisfam');
+        Schema::dropIfExists('consultas_sisfam');
     }
 };
