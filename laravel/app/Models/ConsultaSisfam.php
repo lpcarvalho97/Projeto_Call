@@ -43,5 +43,5 @@ class ConsultaSisfam extends Model
         'total_registros',
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 }
