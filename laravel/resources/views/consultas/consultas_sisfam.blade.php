@@ -13,48 +13,7 @@
         
     </head>
     <body>
-        <h1>Consultas AGHU</h1>
-        <input type="text" id="filtroAghu" placeholder="Filtrar por nome do paciente...">
-        <table id="tabelaAghu">
-            <thead>
-                <tr>
-                    <th>Número da Consulta</th>
-                    <th>Data Marcação</th>
-                    <th>Data Consulta</th>
-                    <th>Dia da Semana</th>
-                    <th>Número do Prontuário</th>
-                    <th>Grade</th>
-                    <th>Nome</th>
-                    <th>Unidade Funcional</th>
-                    <th>Especialidade</th>
-                    <th>Equipe</th>
-                    <th>Nome do Profisional</th>
-                    <th>Telefone para Recado</th>
-                    <th>Telefone para Contato</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($consultasAghu as $consulta)
-                
-                    <tr>
-                        <td>{{ $consulta->nr_consulta }}</td>
-                        <td>{{ $consulta->data_marcacao }}</td>
-                        <td>{{ $consulta->data_consulta }}</td>
-                        <td>{{ $consulta->dia_semana }}</td>
-                        <td>{{ $consulta->nr_prontuario }}</td>
-                        <td>{{ $consulta->grade }}</td>
-                        <td>{{ $consulta->nome_paciente }}</td>
-                        <td>{{ $consulta->unidade_funcional }}</td>
-                        <td>{{ $consulta->especialidade }}</td>
-                        <td>{{ $consulta->equipe }}</td>
-                        <td>{{ $consulta->nome_profissional}}</td>
-                        <td>{{ $consulta->fone_recado}}</td>
-                        <td>{{ $consulta->fone_contato}}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-
+        
         <h1>Consultas SISFAM</h1>
         <input type="text" id="filtroSisfam" placeholder="Filtrar por nome do paciente...">
         <table id="tabelaSisfam">

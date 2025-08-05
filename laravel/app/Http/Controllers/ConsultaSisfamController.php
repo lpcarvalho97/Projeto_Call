@@ -20,6 +20,6 @@ class ConsultaSisfamController extends Controller
         $consultasAghu = ConsultaAghu::latest()->take(50)->get();
         $consultasSisfam = ConsultaSisfam::latest('criacao')->take(50)->get();
 
-        return view('consultas.index', compact('consultasAghu', 'consultasSisfam'));
+        return view('consultas.consultas_sisfam', compact('consultasAghu', 'consultasSisfam'));
     }
 }
