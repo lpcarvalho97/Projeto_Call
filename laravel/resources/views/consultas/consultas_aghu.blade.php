@@ -14,8 +14,27 @@
     </head>
     <body>
         <h1>Consultas AGHU</h1>
+
+        <label for="filtroAghu_2">Filtrar por:</label>
+        <select id="filtroAghu_2">
+            <option value="0">Número da Consulta</option>
+            <option value="1">Data Marcação</option>
+            <option value="2">Data Consulta</option>
+            <option value="3">Dia da Semana</option>
+            <option value="4">Número do Prontuário</option>
+            <option value="5">Grade</option>
+            <option value="6">Nome</option>
+            <option value="7">Unidade Funcional</option>
+            <option value="8">Especialidade</option>
+            <option value="9">Equipe</option>
+            <option value="10">Nome do Profissional</option>
+            <option value="11">Telefone para Recado</option>
+            <option value="12">Telefone para Contato</option>
+        </select>
+        
         <input type="text" id="filtroAghu" placeholder="Filtrar por nome do paciente...">
-        <table id="tabelaAghu">
+
+        <table id="tabelaAghu" border="1">
             <thead>
                 <tr>
                     <th>Número da Consulta</th>
@@ -48,27 +67,36 @@
                         <td>{{ $consulta->especialidade }}</td>
                         <td>{{ $consulta->equipe }}</td>
                         <td>{{ $consulta->nome_profissional}}</td>
-                        <td>{{ $consulta->fone_recado}}</td>
-                        <td>{{ $consulta->fone_contato}}</td>
+                        <td>{{ $consulta->fone_recado }}</td>
+                        <td>{{ $consulta->fone_contato }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
         <script>
-            function aplicarFiltro(inputId, tabelaId, colunaIndex) {
-                document.getElementById(inputId).addEventListener('keyup', function() {
-                    let filtro = this.value.toLowerCase();
-                    let linhas = document.querySelectorAll(`#${tabelaId} tbody tr`);
 
-                    linhas.forEach(function(linha) {
-                        let texto = linha.cells[colunaIndex].textContent.toLowerCase();
-                        linha.style.display = texto.includes(filtro) ? '' : 'none';
+            function aplicaFiltroDinamico(inputId, selectId, tabelaId) {
+                const input = document.getElementById(inputId);
+                const select = document.getElementById(selectId);
+                
+                input.addEventListener('keyup', function () {
+
+                    const filtro = input.value.toLowerCase();
+                    const colunaIndex = parseInt(select.value);
+                    const linhas = document.querySelectorAll(`#${tabelaId} tbody tr`); 
+
+                    linhas.forEach(function (linha) {
+                        const celula = linha.cells[colunaIndex];
+                        if (celula) {
+                            const texto = celula.textContent.toLowerCase();
+                            linha.style.display = texto.includes(filtro) ? '' : 'none';
+                        }
                     });
                 });
             }
 
-            aplicarFiltro('filtroAghu', 'tabelaAghu', 0); //Filtra os dados do AGHU por nome de paciente
+            aplicaFiltroDinamico('filtroAghu', 'filtroAghu_2', 'tabelaAghu');
 
         </script>
 
