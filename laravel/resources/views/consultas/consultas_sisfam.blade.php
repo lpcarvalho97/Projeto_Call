@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Consultas</title>
+        <title>Consultas Sisfam</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <style>
             table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -15,7 +15,8 @@
     <body>
         
         <h1>Consultas SISFAM</h1>
-        <input type="text" id="filtroSisfam" placeholder="Filtrar por nome do paciente...">
+        <label for="filtroSisfam">Filtrar por:</label>
+        <input type="text" id="filtroSisfam" placeholder="Filtrar...">
         <table id="tabelaSisfam">
             <thead>
                 <tr>
@@ -51,6 +52,7 @@
                     <th>Processo Associado</th>
                     <th>APAC Emitida + 3 meses</th>
                     <th>Total de registros</th>
+                    <th>Passível de Nova APAC</th>
                 </tr>
             </thead>
 
@@ -89,6 +91,7 @@
                     <td>{{ $consulta->proc_associado }}</td>
                     <td>{{ $consulta->apac_emitida_mais_3_meses }}</td>
                     <td>{{ $consulta->total_registros }}</td>
+                    <td><input type="text"></td>
                 </tr>
                 @endforeach
         </table>
@@ -106,7 +109,6 @@
                 });
             }
 
-            aplicarFiltro('filtroAghu', 'tabelaAghu', 0); //Filtra os dados do AGHU por nome de paciente
             aplicarFiltro('filtroSisfam', 'tabelaSisfam', 0); //FIltra os dados do Sisfam por nome de paciente
         </script>
 

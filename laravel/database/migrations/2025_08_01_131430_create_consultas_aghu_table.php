@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('nome_profissional')->nullable();
             $table->string('fone_recado')->nullable();
             $table->string('fone_contato')->nullable();
+            $table->string('observacao')->nullable();
+            $table->string('complemento')->nullable();
             $table->timestamps();
         });
     }

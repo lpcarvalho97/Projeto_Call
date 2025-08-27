@@ -31,3 +31,19 @@ th { background-color: #f2f2f2; }
 .editando {
     background-color:#f9f9f9;
 }
+
+.campo_editavel_1{
+    padding: 0%;
+}
+
+.campo_complemento{
+    flex: 1;
+}
+
+.campo_complemento_e_botoes{
+    display:flex;
+}
+
+.container_campo_complemento{
+    display: flex;
+}

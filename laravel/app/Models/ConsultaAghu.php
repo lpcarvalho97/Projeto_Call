@@ -22,6 +22,8 @@
             'nome_profissional',
             'fone_recado',
             'fone_contato',
+            'Observacao',
+            'Complemento',
         ];
 
 

@@ -25,6 +25,8 @@ class ConsultaSeeder extends Seeder
             'nome_profissional' => 'Dr. Marcos Andrade',
             'fone_recado' => '11999999999',
             'fone_contato' => '11999999999',
+            'observacao' => 'não ligar',
+            'complemento' => 'falar com Pedro',
 
         ]);
 
